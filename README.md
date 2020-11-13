@@ -10,6 +10,7 @@ This action translates any text to any language supported by chosen provider. Th
   - [MyMemory](#mymemory)
   - [Yandex](#yandex)
   - [FunTranslations](#funtranslations)
+  - [Tencent](#tencent)
 - [Inputs](#inputs)
 - [Outputs](#outputs)
 - [Example usage](#example-usage)
@@ -67,6 +68,28 @@ Identifier is `funtranslations`.
     provider: funtranslations
     lang: 'klingon'
     source: 'Who are you'
+```
+
+### Tencent
+
+Identifier is `tencent`.
+
+#### Supported translation directions
+```json
+zh,zh-TW,en,ja,ko,fr,es,it,de,tr,ru,pt,vi,id,th,ms,ar,hi
+```
+
+#### How to get API key
+Please follow the steps described in [this](https://cloud.tencent.com/document/product/551/30636) article.
+
+You will also need to provide secret id using the `api_additional_parameter`, `Region` using `api_additional_parameter2`, `Source` using `api_additional_parameter3`, `ProjectId` using `api_additional_parameter4`
+
+```YAML
+with:
+  api_additional_parameter: xxxxx
+  api_additional_parameter2: na-siliconvalley
+  api_additional_parameter3: en
+  api_additional_parameter4: 0
 ```
 
 ## Inputs

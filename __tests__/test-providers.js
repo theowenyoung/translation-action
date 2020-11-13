@@ -23,12 +23,21 @@ const fixture = [{
     name: 'funtranslations',
     apiKey: null,
     lang: 'vulcan'
+},{
+    title: 'Tencent',
+    name: 'tencent',
+    apiKey: process.env.TENCENT_SECRET_KEY,
+    lang: 'zh',
+    addParam: process.env.TENCENT_SECRET_ID,
+    addParam2: 'na-siliconvalley',
+    addParam3: 'en',
+    addParam4: 0
 }];
 
 describe('Provider tests', () => {
     itParam('${value.title} should get correct translation', fixture, async (arg) => {
         const translate = require(`../src/providers/${arg.name}`);
-        const translations = await translate(arg.apiKey, 'Evening', arg.lang, arg.addParam);
+        const translations = await translate(arg.apiKey, 'Evening', arg.lang, arg.addParam,arg.addParam2,arg.addParam3,arg.addParam4);
         assert.isTrue(translations.length > 0);
     });
 
