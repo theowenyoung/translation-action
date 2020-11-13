@@ -25,7 +25,7 @@ module.exports = (apiKey, text, lang, addParam, addParam2,addParam3,addParam4) =
   }
   return client.TextTranslate(params).then(
     data => {
-      return data.TargetText
+      return [data.TargetText]
     }
   )
 
